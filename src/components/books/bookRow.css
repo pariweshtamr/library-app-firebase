@@ -1,0 +1,18 @@
+.bookTable-body {
+  gap: 1rem;
+}
+
+.btns-group {
+  display: flex;
+  gap: 0.6rem;
+}
+
+@media screen and (max-width: 600px) {
+  .img-col {
+    display: flex;
+    justify-content: center;
+  }
+  .btns-group {
+    justify-content: center;
+  }
+}

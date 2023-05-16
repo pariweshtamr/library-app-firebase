@@ -1,0 +1,36 @@
+.add .add-top,
+.add-bottom {
+  padding: 2rem;
+  margin: 20px;
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  display: flex;
+}
+
+.add-top {
+  display: flex;
+  justify-content: end;
+}
+
+.add-top h1 {
+  color: rgb(179, 178, 178);
+  font-size: 1.5rem;
+}
+
+.add-bottom {
+  display: flex;
+  gap: 1rem;
+}
+
+.add-bottom label {
+  font-weight: 500;
+}
+
+@media screen and (max-width: 600px) {
+  .form-control {
+    width: 100%;
+  }
+  .add-bottom {
+    padding: 1.5rem;
+  }
+}

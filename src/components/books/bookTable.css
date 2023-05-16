@@ -1,0 +1,12 @@
+.bookTable-head {
+  gap: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .bookTable-head {
+    display: none !important;
+  }
+  .hr {
+    display: none;
+  }
+}

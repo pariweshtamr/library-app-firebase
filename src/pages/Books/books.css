@@ -1,0 +1,26 @@
+.books-container {
+  padding: 4rem;
+  max-width: 1840px;
+  margin: 0 auto;
+}
+
+.books-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 600px) {
+  .books-container {
+    padding: 1rem;
+  }
+  .books-top {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+@media screen and (max-width: 992px) {
+  .books-container {
+    padding: 2.5rem;
+  }
+}

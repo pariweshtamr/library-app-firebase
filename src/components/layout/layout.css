@@ -1,0 +1,12 @@
+.default-layout {
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.default-main {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+}

@@ -1,0 +1,20 @@
+.transactions {
+  padding: 3.5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .transactions {
+    padding: 1rem;
+  }
+  .book-img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .transactions {
+    padding: 2rem;
+  }
+  .book-img {
+    width: 90%;
+  }
+}
