@@ -1,14 +1,18 @@
-import { signOut } from "firebase/auth"
+import { deleteUser, signOut } from "firebase/auth"
 import { Container, Nav, Navbar } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { auth } from "../../config/firebaseConfig"
 import { toast } from "react-toastify"
 import { logoutSuccess } from "../../redux/user/userSlice"
+import logo from "../../assets/logo.png"
+import "./header.css"
 
 const Header = () => {
   const dispatch = useDispatch()
   const { user } = useSelector((state) => state.user)
+  const navigate = useNavigate()
+  const u = auth.currentUser
   const handleLogout = () => {
     signOut(auth)
       .then(() => {
@@ -17,10 +21,13 @@ const Header = () => {
       })
       .catch((error) => toast.error(error.message))
   }
+
   return (
     <Navbar bg="light" expand="lg" style={{ height: "10vh" }}>
       <Container className="px-5">
-        <Link to={user.uid ? "/books" : "/"}>Library System</Link>
+        <Link to={user.uid ? "/books" : "/"} className="logo-container">
+          <img src={logo} alt="logo" className="logo" />
+        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto d-flex gap-4">

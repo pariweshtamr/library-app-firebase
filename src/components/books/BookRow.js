@@ -204,6 +204,8 @@ const BookRow = ({ book }) => {
           <h5>
             Author: <span>{book?.author}</span>
           </h5>
+          <p>Year: {book?.year}</p>
+
           <p>
             Summary: <span>{book?.summary}</span>
           </p>
