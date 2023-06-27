@@ -7,9 +7,11 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"
 import { auth, db } from "../../config/firebaseConfig"
 import { doc, setDoc } from "firebase/firestore"
 import { Link, useNavigate } from "react-router-dom"
+import { useSelector } from "react-redux"
 
 const Register = () => {
   const navigate = useNavigate()
+  const { user } = useSelector((state) => state.user)
   const [loading, setLoading] = useState(false)
   const [form, setForm] = useState({})
 
@@ -98,7 +100,9 @@ const Register = () => {
 
             <Form.Select name="role" onChange={handleChange}>
               <option value="">-- Select user type --</option>
-              <option value="admin">Admin</option>
+              <option value="admin" disabled={user?.role !== "admin"}>
+                Admin
+              </option>
               <option value="user">User</option>
             </Form.Select>
 

@@ -38,6 +38,12 @@ const Sidebar = () => {
                   <span>Transactions</span>
                 </li>
               </NavLink>
+              <NavLink to="/register">
+                <li className={pathname === "/register" ? "active" : ""}>
+                  <i className="fa-solid fa-book-open-reader"></i>
+                  <span>Register Admin</span>
+                </li>
+              </NavLink>
             </>
           )}
         </ul>

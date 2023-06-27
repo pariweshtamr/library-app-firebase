@@ -1,7 +1,7 @@
-import { deleteUser, signOut } from "firebase/auth"
+import { signOut } from "firebase/auth"
 import { Container, Nav, Navbar } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { auth } from "../../config/firebaseConfig"
 import { toast } from "react-toastify"
 import { logoutSuccess } from "../../redux/user/userSlice"
@@ -11,8 +11,7 @@ import "./header.css"
 const Header = () => {
   const dispatch = useDispatch()
   const { user } = useSelector((state) => state.user)
-  const navigate = useNavigate()
-  const u = auth.currentUser
+
   const handleLogout = () => {
     signOut(auth)
       .then(() => {
@@ -23,7 +22,7 @@ const Header = () => {
   }
 
   return (
-    <Navbar bg="light" expand="lg" style={{ height: "10vh" }}>
+    <Navbar bg="light" expand="lg" style={{ height: "max-content" }}>
       <Container className="px-5">
         <Link to={user.uid ? "/books" : "/"} className="logo-container">
           <img src={logo} alt="logo" className="logo" />
@@ -34,6 +33,7 @@ const Header = () => {
             {user?.uid ? (
               <>
                 <div>Welcome {user.fName}!</div>
+
                 <Link to="/" onClick={handleLogout}>
                   Logout
                 </Link>
