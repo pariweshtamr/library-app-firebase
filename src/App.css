@@ -1,3 +1,23 @@
 a {
   text-decoration: none !important;
 }
+
+.pw-input {
+  position: relative;
+}
+
+.show-pw {
+  position: absolute;
+  top: 50%;
+  right: 0.8rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.password-strength-text {
+  font-size: 0.8rem;
+  color: #222;
+}
+.password-rules {
+  font-size: 0.7rem;
+}
